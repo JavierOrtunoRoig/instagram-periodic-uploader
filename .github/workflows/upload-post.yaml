@@ -1,7 +1,11 @@
 name: create-post
+# on:
+#   schedule:
+#     - cron: "*/1 * * * *" # Ejecutar cada minuto
 on:
-  schedule:
-    - cron: "*/1 * * * *" # Ejecutar cada minuto
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
