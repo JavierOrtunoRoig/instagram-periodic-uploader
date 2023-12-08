@@ -2,12 +2,12 @@
   {
     "path": "images/1.jpg",
     "description": "Hi! this is a description for image 1",
-    "uploaded": true
+    "uploaded": false
   },
   {
     "path": "images/2.jpg",
     "description": "Hi! this is a description for image 2",
-    "uploaded": true
+    "uploaded": false
   },
   {
     "path": "images/3.jpg",
