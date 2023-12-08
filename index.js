@@ -10,32 +10,32 @@ async function createPost() {
    const browser = await playwright.chromium.launch({
       headless: true,
       slowMo: 50,
-      locale: "es-ES"
+      locale: "en-GB"
    });
    const context = await browser.newContext();
    const page = await context.newPage();
    await page.goto("https://www.instagram.com/");
 
-   await page.click("text=Permitir todas las cookies");
+   await page.click('._a9_0');
    
    await page.fill("input[name='username']", username);
    await page.fill("input[name='password']", password);
    
    await page.click("button[type='submit']");
 
-   await page.click("text=Crear");
+   await page.click("text=Create");
 
    const postToUpload = posts.find((post) => post.uploaded === false);
 
    await page.setInputFiles('input[type="file"]', postToUpload.path);
 
-   await page.click("text=Siguiente");
+   await page.click("text=Next");
 
-   await page.click("text=Siguiente");
+   await page.click("text=Next");
 
    await page.fill("div[role='textbox']", postToUpload.description);
 
-   await page.click("text=Compartir");
+   await page.click("text=Share");
 
    await page.waitForTimeout(5000);
 
