@@ -23,6 +23,8 @@ async function createPost() {
    
    await page.click("button[type='submit']");
 
+   await page.waitForTimeout(5000);
+
    await page.screenshot({ path: 'screenshots/screenshot.png' });
    await page.click("text=Crear");
 
