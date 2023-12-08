@@ -23,6 +23,7 @@ async function createPost() {
    
    await page.click("button[type='submit']");
 
+   await page.screenshot({ path: 'screenshot.png' });
    await page.click("text=Create");
 
    const postToUpload = posts.find((post) => post.uploaded === false);
