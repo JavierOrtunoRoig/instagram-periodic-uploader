@@ -16,7 +16,7 @@ async function createPost() {
    const page = await context.newPage();
    await page.goto("https://www.instagram.com/");
 
-   await page.click('._a9_0');
+   // await page.click('._a9_0');
    
    await page.fill("input[name='username']", username);
    await page.fill("input[name='password']", password);

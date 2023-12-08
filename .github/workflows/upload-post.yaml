@@ -1,7 +1,4 @@
 name: create-post
-# on:
-#   schedule:
-#     - cron: "*/1 * * * *" # Ejecutar cada minuto
 on:
   push:
     branches:
@@ -27,3 +24,15 @@ jobs:
       - name: Ejecutar index.js
         run: node index.js
 
+      - name: Ejecutar pruebas de Playwright
+        uses: microsoft/playwright-github-action@v1
+        with:
+          browser-type: chromium
+          test-command: npm test
+
+      - name: Cargar artefactos de prueba
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: capturas-de-pantalla
+          path: screenshots/
