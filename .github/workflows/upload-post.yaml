@@ -7,15 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
 
       - name: Instalar dependencias
         run: npm install
+
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
 
       - name: Ejecutar index.js
         run: node index.js
