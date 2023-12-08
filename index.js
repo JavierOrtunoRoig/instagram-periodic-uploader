@@ -8,8 +8,9 @@ const password = "javier11";
 async function createPost() {
 
    const browser = await playwright.chromium.launch({
-      headless: true,
+      headless: false,
       slowMo: 50,
+      locale: "es-ES"
    });
    const context = await browser.newContext();
    const page = await context.newPage();
